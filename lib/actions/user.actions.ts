@@ -13,8 +13,8 @@ export const createUser = async(user:CreateUserParams)=>{
         const newUser =  await User.create(user);
         return JSON.parse(JSON.stringify(newUser));
     }
-    catch(err){
-        handleError(err);
+    catch(error){
+        handleError(error);
     }
 }
 export async function updateUser(clerkId: string, user: UpdateUserParams) {
