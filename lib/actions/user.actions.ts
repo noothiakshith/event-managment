@@ -1,3 +1,5 @@
+'use server'
+
 import { connectToDatabase } from '../database';
 import User from '../database/models/user.model';
 import { handleError } from '../utils';
@@ -5,8 +7,6 @@ import { CreateUserParams, UpdateUserParams } from './../../types/index';
 import Event from '../database/models/event.model';
 import Order from '../database/models/order.model';
 import { revalidatePath } from 'next/cache';
-'use server'
-
 export const createUser = async(user:CreateUserParams)=>{
     try{
         await connectToDatabase();
